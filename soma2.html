@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário 2</title>
+</head>
+<body>
+    <label for="input1">Primeiro número</label>
+    <input type="number" id="input1">
+    <label for="input2">Segundo número</label>
+    <input type="number" id="input2">
+    <input onclick="soma()" type="button" value="Calcular">
+
+    <script>
+        function soma(){
+            let numero1 = document.getElementById('input1').value;
+            let numero2 = document.getElementById('input2').value;
+
+            alert(parseFloat(numero1)+parseFloat(numero2));
+        }
+    </script>
+</body>
+</html>

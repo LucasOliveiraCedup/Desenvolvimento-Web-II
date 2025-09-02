@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Produtos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background: #f4f4f9;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    input, button {
+      padding: 8px;
+      margin: 5px 0;
+      width: 99%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background: #4CAF50;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: #fff;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Cadastro de Produtos</h1>
+
+  <form id="formProduto">
+    <label for="nome">Nome do Produto:</label>
+    <input type="text" id="nome" required>
+
+    <label for="preco">Preço:</label>
+    <input type="number" id="preco" step="0.01" required>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <h2>Lista de Produtos</h2>
+  <ul id="listaProdutos"></ul>
+
+  <script>
+    const form = document.getElementById("formProduto");
+    const lista = document.getElementById("listaProdutos");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // impede o reload da página
+
+      const nome = document.getElementById("nome").value;
+      const preco = document.getElementById("preco").value;
+
+      // cria o item da lista
+      const li = document.createElement("li");
+      li.textContent = `${nome} - R$ ${parseFloat(preco).toFixed(2)}`;
+
+      // adiciona na lista
+      lista.appendChild(li);
+
+      // limpa os campos
+      form.reset();
+    });
+  </script>
+</body>
+</html>
