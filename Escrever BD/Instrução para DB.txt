@@ -1,0 +1,6 @@
+CREATE DATABASE loja;
+CREATE TABLE `loja`.`produto` (
+  `idproduto` INT NOT NULL AUTO_INCREMENT,
+  `nome_produto` VARCHAR(45) NULL,
+  `preco_produto` FLOAT NULL,
+  PRIMARY KEY (`idproduto`));
